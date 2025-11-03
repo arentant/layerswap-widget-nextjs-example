@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Swap, LayerswapProvider, LayerSwapSettings, ThemeData } from '@layerswap/widget'
 import { StarknetWalletConnectors } from "@dynamic-labs/starknet";
-import { DynamicContextProvider } from "@dynamic-labs/sdk-react-core";
+import { DynamicContextProvider, DynamicWidget } from "@dynamic-labs/sdk-react-core";
 import { EVMProvider } from "@layerswap/wallet-evm"
 import { StarknetProvider } from "@layerswap/wallet-starknet"
 import { SVMProvider } from "@layerswap/wallet-svm"
@@ -25,7 +25,8 @@ const PageComponent: FC<{ settings?: LayerSwapSettings }> = ({ settings }) => {
                 walletConnectors: [StarknetWalletConnectors],
             }}
         >
-            <div className="h-screen flex flex-cols items-center justify-center">
+            <div className="h-screen flex flex-col items-center justify-center gap-4">
+                <DynamicWidget />
                 <div className="w-[600px] mx-auto place-self-center rounded-lg">
                     <LayerswapProvider
                         config={{
@@ -34,9 +35,9 @@ const PageComponent: FC<{ settings?: LayerSwapSettings }> = ({ settings }) => {
                             apiKey: 'm1jz5JMmndWbMmYLm5vcsHtpxQ35xGT2Z4xa+rp/i98GXVc1vhH7lvY0zbLMTdkD9BXw+HLUTku4H6VumEDogQ',
                             version: 'mainnet',
                             initialValues: {
-                                toAsset: 'USDC',
-                                lockTo: true,
-                                lockAsset: true
+                                to: "STARKNET_MAINNET",
+                                toAsset: 'WBTC',
+                                lockTo: true
                             },
                         }}
                         walletProviders={[EVMProvider, starknetProvider, SVMProvider, BitcoinProvider]}
