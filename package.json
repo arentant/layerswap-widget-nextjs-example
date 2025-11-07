@@ -43,6 +43,7 @@
     "@web3-react/types": "^6.0.7",
     "autoprefixer": "^10.4.5",
     "eslint": "8.49.0",
+    "@ton/crypto": "^3.3.0",
     "eslint-config-next": "^14.0.4",
     "tailwindcss": "^4.0.15",
     "typescript": "5.9.3"
