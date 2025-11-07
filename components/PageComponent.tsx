@@ -6,6 +6,10 @@ import { EVMProvider } from "@layerswap/wallet-evm"
 import { StarknetProvider } from "@layerswap/wallet-starknet"
 import { SVMProvider } from "@layerswap/wallet-svm"
 import { BitcoinProvider } from "@layerswap/wallet-bitcoin"
+import { FuelProvider } from "@layerswap/wallet-fuel"
+import { ParadexProvider } from "@layerswap/wallet-paradex"
+import { TonProvider } from "@layerswap/wallet-ton"
+import { TronProvider } from "@layerswap/wallet-tron"
 import useCustomStarknet from "../hooks/useCustomStarknet";
 import { WalletProvider } from "@layerswap/widget/types";
 import "@layerswap/widget/index.css"
@@ -40,7 +44,7 @@ const PageComponent: FC<{ settings?: LayerSwapSettings }> = ({ settings }) => {
                                 lockTo: true
                             },
                         }}
-                        walletProviders={[EVMProvider, starknetProvider, SVMProvider, BitcoinProvider]}
+                        walletProviders={[EVMProvider, starknetProvider, SVMProvider, BitcoinProvider, FuelProvider, ParadexProvider, TonProvider, TronProvider]}
                     >
                         <Swap />
                     </LayerswapProvider>
